@@ -5,7 +5,7 @@
 import Vue from 'vue/dist/vue.esm'
 import ToolbarInLine from "./toolbarInLine.vue";
 import { moduleMapper } from "../loader/index";
-console.log(moduleMapper, "moduleMapper");
+// console.log(moduleMapper, "moduleMapper");
 export default {
   //   components: {
   //     toolbarInLine,
@@ -13,7 +13,7 @@ export default {
   props: ["btnInitData"],
   name: "Toolbar",
   render(h) {
-    console.log(this.btnInitData,'this.btnInitData')
+    // console.log(this.btnInitData,'this.btnInitData')
     const dataHtml = `<div>
     <el-row>
       <el-col v-if="btnBtn('').length > 0">
@@ -50,9 +50,9 @@ export default {
           const list = this.btns.map((btn) => {
             const code = btn.code;
             if (code && btn.source === "本地") {
-              console.log(this.moduleMapper);
+              // console.log(this.moduleMapper);
               const modu = this.moduleMapper["saver"];
-              console.log(modu, "modu");
+              // console.log(modu, "modu");
               const { action } = modu;
               return {
                 btnParams: {
@@ -77,7 +77,7 @@ export default {
               };
             }
           });
-          console.log(list, "list");
+          // console.log(list, "list");
           return list;
         } else {
           return [];
@@ -86,7 +86,7 @@ export default {
     },
   }}`;
     datajs = eval("(" + datajs + ")");
-    console.log(datajs,'toolbar-datajs')
+    // console.log(datajs,'toolbar-datajs')
     let compView=''
     let compJavascript=''
     const result = Vue.extend({

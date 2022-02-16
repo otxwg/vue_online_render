@@ -41,7 +41,7 @@ export default {
         methods: {},
       }`;
     dataJs = eval("(" + dataJs + ")");
-    console.log(dataJs);
+    // console.log(dataJs);
     const result = Vue.extend({
       components: {
         Toolbar,
@@ -57,7 +57,7 @@ export default {
       template: dataHtml,
       ...dataJs,
     });
-    console.log(result, "result");
+    // console.log(result, "result");
     return h(result, {
       on: this.$listeners,
       props: this.props,

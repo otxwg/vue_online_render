@@ -9,8 +9,8 @@ export default {
     // setCss(this.dataCss)
     // 这里是关键，将string字符串转换成模板
     // 难点是String中包含了自定义组件，使用v-html是解析不了的
-    console.log(this.dataHtml, "btnTemplate--html");
-    console.log(this.dataJs, "btnTemplate--dataJs");
+    // console.log(this.dataHtml, "btnTemplate--html");
+    // console.log(this.dataJs, "btnTemplate--dataJs");
     if (this.dataHtml) {
       const result = Vue.extend({
         props: {},

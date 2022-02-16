@@ -70,28 +70,34 @@ export default {
     // },
     // 设置组件的值
     async setComData(btn) {
-      console.log("setComData", "");
+      console.log(btn,"setComData", "");
       this.codePropsData = {
         ...btn,
         compDataThis: this,
       };
-      let jsCode = `{
-            components: {},
-            data() {
-                return {
-                saveActionCahce: {}
-                }
-            },
-            computed: {},
-            watch: {},
-            created() {},
-            mounted() {
-            console.log('inline-btn在线按钮执行了')
-            }}`;
+      // let jsCode = `{
+      //       components: {},
+      //       data() {
+      //           return {
+      //           saveActionCahce: {}
+      //           }
+      //       },
+      //       computed: {},
+      //       watch: {},
+      //       created() {},
+      //       mounted() {
+      //       console.log('inline-btn在线按钮执行了')
+      //       }}`;
+      let jsCode=btn.btnInitObj.dataJs
+      let compView=btn.btnInitObj.dataHtml
+      // console.log(jsCode,'jsCode')
+      // console.log(compView,'compView')
       this.compData = {
         compJavascript: eval(`(${jsCode})`),
-        compView: `<div class="">这里是在线按钮界面，可以软编码渲染</div>`,
+        compView: compView,
+        // compView: `<div class="">这里是在线按钮界面，可以软编码渲染</div>`,
       };
+      // console.log(this.compData)
     },
   },
 };

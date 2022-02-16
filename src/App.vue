@@ -4,7 +4,6 @@
       <template #exec> 111</template>
       <template #default>222</template>
     </entrance>
-    
   </div>
 </template>
 
@@ -19,13 +18,13 @@ export default {
   data() {
     return {
       wf: { id: "520", name: "otxwg" },
-      // btnInitData:[{dataJs:'dataJs',dataHtml:'dataHtml'}]
-      btnInitData: [// 模拟接口数据
+      btnInitData: [
+        // 模拟接口数据
         {
           source: "线上",
           btnComponentId: "send",
           code: "send",
-          id:'send',
+          id: "send",
           dataJs: `{
         components: {},
         data() {
@@ -40,18 +39,12 @@ export default {
           this.mountedSaveAction()
         },
         methods: {
-          // 控制ID_为空情况下只能保存一次
           mountedSaveAction() {
-            const { wfParams } = this.codePropsData
-            const { forms } = wfParams
-            forms.forEach((item) => {
-              // 初始化默认还没保存
-              this.saveActionCahce[item.formUri] = true
-            })
-          },
+          console.log('做点什么...')
+          }
         }
       }`,
-          dataHtml: `<div class=""></div>`,
+          dataHtml: `<div class="">这里是在线按钮相关界面，可以软编码渲染</div>`,
         },
       ],
     };
